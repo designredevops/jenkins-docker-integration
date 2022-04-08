@@ -6,8 +6,7 @@ pipeline {
       jdk17Home     = tool name: 'JDK17'
       dockerHome    = tool 'DOCKER'
       mavenHome     = tool 'MAVEN'
-      TAG      = sh(script: 'mvn help:evaluate -Dexpression=project.version -q -DforceStdout', returnStdout: true)
-
+     
       PATH = "$dockerHome/bin:$mavenHome/bin:$jdk17Home/bin:$PATH"
    }
 
